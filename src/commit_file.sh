@@ -11,8 +11,6 @@ cd "$PROJECT_ROOT" || exit
 
 FILE_PATH="$1"
 
-echo "'$FILE_PATH'"
-
 if [ -z "$FILE_PATH" ]; then
   echo "ERRO: Nenhum arquivo fornecido para o commit."
   exit 1
