@@ -21,14 +21,14 @@ git ls-files --modified --others --exclude-standard -z "${EXTENSIONS[@]}" | whil
   echo "Processando arquivo: $file"
 
   # Executa o script de commit individual
-  bash "$SCRIPT_DIR/scripts_scripts_commit_file.sh" "$file"
+  bash "$SCRIPT_DIR/commit_file.sh" "$file"
   if [ $? -ne 0 ]; then
     echo "ERRO: Abortando o processo devido a uma falha no commit de '$file'."
     exit 1
   fi
 
   # Executa o script de push
-  bash "$SCRIPT_DIR/scripts_scripts_push_repo.sh"
+  bash "$SCRIPT_DIR/push_repo.sh"
   if [ $? -ne 0 ]; then
     echo "ERRO: Abortando o processo devido a uma falha no push após commitar '$file'."
     exit 1
